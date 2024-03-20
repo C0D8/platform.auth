@@ -1,4 +1,4 @@
-package store.auth;
+package insper.store.auth;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.ResponseEntity;
@@ -16,5 +16,10 @@ public interface AuthController {
     @PostMapping("/auth/login")
     ResponseEntity<LoginOut> authenticate (
         @RequestBody(required = true) CredentialIn in
+    );
+
+    @PostMapping("/auth/solve")
+    ResponseEntity<SolveOut> solve (
+        @RequestBody(required = true) SolveIn in
     );
 }
